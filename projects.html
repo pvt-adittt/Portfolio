@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Aditya</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        .projects {
+            min-height: 100vh;
+            padding: 10rem 9% 7rem;
+            background: var(--bg-color);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+            gap: 3rem;
+            margin-top: 1rem;
+        }
+
+        .project-card {
+            position: relative;
+            background: var(--second-bg-color);
+            border: .2rem solid var(--main-color);
+            border-radius: 1rem;
+            padding: 2.5rem;
+            overflow: hidden;
+            transition: transform .3s, box-shadow .3s;
+            z-index: 1;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: rgba(0, 171, 240, 0.06);
+            z-index: -1;
+            transition: .5s;
+        }
+
+        .project-card:hover::before {
+            width: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 0 25px rgba(0, 171, 240, 0.2);
+        }
+
+        .project-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.8rem;
+        }
+
+        .project-icon {
+            width: 5rem;
+            height: 5rem;
+            background: transparent;
+            border: .2rem solid var(--main-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.2rem;
+            color: var(--main-color);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1.2rem;
+        }
+
+        .project-links a {
+            font-size: 2.2rem;
+            color: var(--text-color);
+            transition: color .3s;
+        }
+
+        .project-links a:hover {
+            color: var(--main-color);
+        }
+
+        .project-card h3 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            color: var(--text-color);
+        }
+
+        .project-card p {
+            font-size: 1.5rem;
+            color: #a0b4bf;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .8rem;
+        }
+
+        .tag {
+            font-size: 1.2rem;
+            padding: .4rem 1.2rem;
+            border: .15rem solid var(--main-color);
+            border-radius: 2rem;
+            color: var(--main-color);
+            background: transparent;
+            letter-spacing: .05rem;
+        }
+
+        .project-divider {
+            width: 4rem;
+            height: .2rem;
+            background: var(--main-color);
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- header -->
+    <header class="header">
+        <a href="index.html" class="logo">Aditya.</a>
+
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="education.html">Education</a>
+            <a href="skills.html">Skills</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- projects section -->
+    <section class="projects">
+        <h2 class="heading">My <span>Projects</span></h2>
+
+        <div class="projects-grid">
+
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-top">
+                    <div class="project-icon">
+                        <i class='bx bx-chip'></i>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" title="GitHub"><i class='bx bxl-github'></i></a>
+                        <a href="#" title="Live Demo"><i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+                <h3>Smart Home Automation System</h3>
+                <div class="project-divider"></div>
+                <p>Designed and implemented a home automation system using a microcontroller, relay modules, and IR sensors. The system allows users to control home appliances remotely via a simple serial interface programmed in C, with real-time feedback and fault detection built in.</p>
+                <div class="project-tags">
+                    <span class="tag">C</span>
+                    <span class="tag">Microcontroller</span>
+                    <span class="tag">Circuit Design</span>
+                    <span class="tag">IoT</span>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-top">
+                    <div class="project-icon">
+                        <i class='bx bx-radio-circle-marked'></i>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" title="GitHub"><i class='bx bxl-github'></i></a>
+                        <a href="#" title="Live Demo"><i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+                <h3>FM Signal Analyzer</h3>
+                <div class="project-divider"></div>
+                <p>Built a Python-based tool to capture and analyze FM radio signals using Software Defined Radio (SDR). The application visualizes frequency spectrums in real time, identifies signal strength, and logs data for further analysis — demonstrating key concepts of signal processing and telecommunications.</p>
+                <div class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">SDR</span>
+                    <span class="tag">Signal Processing</span>
+                    <span class="tag">Matplotlib</span>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-top">
+                    <div class="project-icon">
+                        <i class='bx bx-bot'></i>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" title="GitHub"><i class='bx bxl-github'></i></a>
+                        <a href="#" title="Live Demo"><i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+                <h3>Line Following Robot</h3>
+                <div class="project-divider"></div>
+                <p>Engineered an autonomous line-following robot from scratch using IR sensors, DC motors, and an H-bridge driver circuit. Wrote the control logic in C with a PID algorithm for smooth and accurate path tracking. The robot successfully navigates curved and intersecting tracks without manual input.</p>
+                <div class="project-tags">
+                    <span class="tag">C</span>
+                    <span class="tag">Robotics</span>
+                    <span class="tag">PID Control</span>
+                    <span class="tag">Embedded Systems</span>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card">
+                <div class="project-top">
+                    <div class="project-icon">
+                        <i class='bx bx-bar-chart-alt-2'></i>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" title="GitHub"><i class='bx bxl-github'></i></a>
+                        <a href="#" title="Live Demo"><i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+                <h3>Digital Low-Pass Filter Simulator</h3>
+                <div class="project-divider"></div>
+                <p>Developed a Python simulation tool to design and test digital low-pass filters using the Butterworth and Chebyshev models. Users can input cutoff frequency and order parameters, and the tool plots the frequency response and step response interactively — useful for validating filter designs before hardware implementation.</p>
+                <div class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">SciPy</span>
+                    <span class="tag">DSP</span>
+                    <span class="tag">NumPy</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
